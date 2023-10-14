@@ -6,7 +6,6 @@ import engine.Cooldown;
 import engine.Core;
 import engine.GameState;
 import engine.SoundEffect;
-import engine.SoundEffect;
 
 public class SubMenuScreen extends Screen {
     /** Milliseconds between changes in user selection. */

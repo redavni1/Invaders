@@ -85,6 +85,7 @@ public class SoundEffect {
         }
         catch(Exception e) { System.err.println("SOUND ERROR: Enemy's bullet sound does not played."); }
     }
+    // sound for button moving sound
     public void playButtonClickSound() {
         try{
             Clip clip = AudioSystem.getClip();
@@ -95,6 +96,7 @@ public class SoundEffect {
         }
         catch(Exception e) { System.err.println("SOUND ERROR: Button Click sound error."); }
     }
+    // sound for spacebar key
     public void playSpaceButtonSound() {
         try {
             Clip clip = AudioSystem.getClip();
