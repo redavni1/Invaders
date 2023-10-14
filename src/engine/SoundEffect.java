@@ -13,6 +13,9 @@ public class SoundEffect {
     File enemydestructionsound = new File("sound/soundEffect/Enemydestruction.wav");
     File enemyshootingsound = new File("sound/soundEffect/Enemyshooting.wav");
 
+    File buttonclicksound = new File("sound/soundEffect/ButtonClick.wav");
+
+
     /**
      * Play ship's shooting sound
      */
@@ -80,6 +83,16 @@ public class SoundEffect {
             Thread.sleep(1);
         }
         catch(Exception e) { System.err.println("SOUND ERROR: Enemy's bullet sound does not played."); }
+    }
+    public void playButtonClickSound() {
+        try{
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(shipshootingsound));
+            clip.start();
+
+            Thread.sleep(1);
+        }
+        catch(Exception e) { System.err.println("SOUND ERROR: Button Click sound does not played."); }
     }
     public void SoundEffect_play(){
 
