@@ -1,7 +1,7 @@
 package screen;
 
 import java.awt.event.KeyEvent;
-
+import engine.SoundEffect;
 import engine.Cooldown;
 import engine.Core;
 
@@ -13,6 +13,8 @@ public class SelectScreen extends Screen {
     /** Time between changes in user selection. */
     private Cooldown selectionCooldown;
     private int difficulty;
+
+    private SoundEffect soundEffect;
 
     /**
      * Constructor, establishes the properties of the screen.
@@ -31,6 +33,7 @@ public class SelectScreen extends Screen {
         difficulty = diff;
         this.selectionCooldown = Core.getCooldown(SELECTION_TIME);
         this.selectionCooldown.reset();
+        soundEffect = new SoundEffect();
     }
 
     /**
@@ -58,11 +61,13 @@ public class SelectScreen extends Screen {
                     || inputManager.isKeyDown(KeyEvent.VK_W)) {
                 previousMenuItem();
                 this.selectionCooldown.reset();
+                soundEffect.playButtonClickSound();
             }
             if (inputManager.isKeyDown(KeyEvent.VK_DOWN)
                     || inputManager.isKeyDown(KeyEvent.VK_S)) {
                 nextMenuItem();
                 this.selectionCooldown.reset();
+                soundEffect.playButtonClickSound();
             }
             if (inputManager.isKeyDown(KeyEvent.VK_SPACE))
                 this.isRunning = false;

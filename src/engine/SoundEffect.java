@@ -87,7 +87,7 @@ public class SoundEffect {
     public void playButtonClickSound() {
         try{
             Clip clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(shipshootingsound));
+            clip.open(AudioSystem.getAudioInputStream(buttonclicksound));
             clip.start();
 
             Thread.sleep(1);
