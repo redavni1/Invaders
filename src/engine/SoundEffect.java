@@ -14,6 +14,7 @@ public class SoundEffect {
     File enemyshootingsound = new File("sound/soundEffect/Enemyshooting.wav");
 
     File buttonclicksound = new File("sound/soundEffect/ButtonClick.wav");
+    File spacebuttonsound = new File("sound/soundEffect/SpaceButton.wav");
 
 
     /**
@@ -92,8 +93,20 @@ public class SoundEffect {
 
             Thread.sleep(1);
         }
-        catch(Exception e) { System.err.println("SOUND ERROR: Button Click sound does not played."); }
+        catch(Exception e) { System.err.println("SOUND ERROR: Button Click sound error."); }
     }
+    public void playSpaceButtonSound() {
+        try {
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(spacebuttonsound));
+            clip.start();
+
+            Thread.sleep(1);
+        } catch (Exception e) {
+            System.err.println("SOUND ERROR: Space Key sound error.");
+        }
+    }
+
     public void SoundEffect_play(){
 
     }
